@@ -841,6 +841,5 @@ void horizontalBarGraph(float array[], string axis, int arraySize, ofstream& ofi
   }
 	ofile << "---------------------------------------" << endl;
 	ofile << "Legend: ■ = " << arrayInterval << "L" << endl;
-	// }
 	ofile << "---------------------------------------" << endl;
 }
