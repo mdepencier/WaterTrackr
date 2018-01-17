@@ -799,6 +799,7 @@ void maximum(Statistics& stats){
   stats.max = max;
 }
 
+//Generates the display for the bar graph in the outfile
 void horizontal(int graphSize, float interval, ofstream& ofile){
   int times = graphSize / interval;
 	for(int i = 0; i < times; i++){
@@ -807,6 +808,7 @@ void horizontal(int graphSize, float interval, ofstream& ofile){
   ofile << endl;
 }
 
+//Finds the max of the data collected, important for generating a scaled bar graph
 float findMax(float array[], int size){
 	float max = array[0];
 	for(int i = 0; i < size; i++){
@@ -818,12 +820,14 @@ float findMax(float array[], int size){
 	return max;
 }
 
+//Scales bargraph to a size that fits nicely in output file, based off of data size collected
 void scale(float array[], int scaleSize, int arraySize, float scaledArray[]){
 	for(int i = 0; i < arraySize; i++){
 		scaledArray[i] = (array[i]/scaleSize);
 	}
 }
 
+//Generates a bargraph using helper functions
 void horizontalBarGraph(float array[], string axis, int arraySize, ofstream& ofile){
 	float arrayMax = findMax(array, arraySize);
 	float scaledArray[arraySize];
